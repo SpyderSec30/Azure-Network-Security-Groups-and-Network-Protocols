@@ -11,6 +11,8 @@
 - Wireshark
 - ICMP
 - SSH
+- DHCP
+- DNS
 
 <h2>Getting Started with ICMP</h2>
 <p>
@@ -136,6 +138,11 @@ Your machine will automatically have DNS traffic running in the background that 
 
 <h4>DNS servers use UDP port 53</h4>
 <img src="https://github.com/user-attachments/assets/1e5810c5-7e6e-4f41-b44b-240167bec650"/><br></br>
+</p>
+
+<h2>Finished</h2>
+<p>
+In conclusion, understanding common networking protocols such as ICMP, SSH, DHCP, and DNS is essential for anyone involved in IT, network administration, and cybersecurity. These protocols form the backbone of network communication, enabling efficient and secure data transfer, device management, and connectivity. By mastering the use of tools like ping for ICMP, ssh for secure shell access, dhclient for DHCP, and nslookup for DNS, professionals can effectively troubleshoot, secure, and optimize network performance.
 </p>
 
 
