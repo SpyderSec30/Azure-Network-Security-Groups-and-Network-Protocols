@@ -9,6 +9,8 @@
 - Microsoft Azure (Virtual Machines/Computers)
 - Remote Desktop Protocol (RDP)
 - Wireshark
+- ICMP
+- SSH
 
 <h2>Getting Started with ICMP</h2>
 <p>
@@ -85,26 +87,58 @@ SSH (Secure Shell) is a network protocol that allows secure communication betwee
 </p>
 
 <p>
-You can SSH into a computer by typing "ssh username@ipaddress". To connect, you will need the login credentials of the user your connecting to. Once I make the connection you can view the traffic in Wireshark by typing ssh in the filter. 
+You can SSH into a computer by typing "ssh username@ipaddress" inside Powershell. To connect, you will need the login credentials of the user your connecting to. Once I make the connection you can view the traffic in Wireshark by typing ssh in the filter. 
+
+<img src="https://github.com/SpyderSec30/Azure-Network-Security-Groups-and-Network-Protocols/assets/174487140/ab1c174c-4429-4999-b72b-4815bc998d2f"/><br></br>
+
+<h4>SSH traffic in Wireshark</h4>
+<img src="https://github.com/SpyderSec30/Azure-Network-Security-Groups-and-Network-Protocols/assets/174487140/44df1c8c-b94b-4e49-984d-0856433bc0b4"/><br></br>
+
+<h4>SSH uses TCP port 22</h4>
+<img src="https://github.com/SpyderSec30/Azure-Network-Security-Groups-and-Network-Protocols/assets/174487140/4f71347c-c3ef-44e0-9f38-020f01e30e19"/><br></br>
+
+<h4>SSH connection Successful</h4>
+<img src="https://github.com/SpyderSec30/Azure-Network-Security-Groups-and-Network-Protocols/assets/174487140/5c81d385-f85b-4a64-a3a6-369cdac51009"/><br></br>
+</p>
+
+<h2>DHCP</h2>
+
+<p>
+DHCP (Dynamic Host Configuration Protocol) is a network protocol used to automatically assign IP addresses and other network configuration parameters to devices on a network, so they can communicate with other IP networks. 
+</p>
+
+<p>
+To view a computer's IP information just type ipconfig in Powershell. We can force some DHCP traffic by typing ipconfig /renew
+</p>
+
+<img src="https://github.com/SpyderSec30/Azure-Network-Security-Groups-and-Network-Protocols/assets/174487140/9bef2741-680f-4365-a5e5-3d40b17b93f6"/><br></br>
+
+
+<h4>DHCP traffic in Wireshark</h4>
+<img src="https://github.com/SpyderSec30/Azure-Network-Security-Groups-and-Network-Protocols/assets/174487140/ea4eb690-d3d7-4ece-aa64-80b698b58fe4"/><br></br>
+
+<h4>The DHCP server uses UDP port 67 and the computer requesting the IP address (client) uses UDP port 68 </h4>
+<img src="https://github.com/SpyderSec30/Azure-Network-Security-Groups-and-Network-Protocols/assets/174487140/69454df1-e7df-401d-8d2b-535849aaa372"/><br></br>
+</p>
+
+<h2>DNS</h2>
+<p>
+DNS (Domain Name System) is a system that translates human-readable domain names into IP addresses that computers use to identify each other on the network. Kinda like a phonebook for the internet, enabling users to access websites using easy-to-remember names instead of IP addresses.
+</p>
+
+<p>
+Your machine will automatically have DNS traffic running in the background that you dont even know about unless you view the data flow in Wireshark. I'm going to refresh Wireshark to clear the packets that are already there. Then I'll run the command nslookup which is used for querying the Domain Name System (DNS) to obtain domain name or IP address mapping information.
+
+<img src="https://github.com/user-attachments/assets/0305b885-979f-4c39-abf7-ee11c8e094f9"/><br></br>
+
+<h4>DNS traffic flow. Each line represents a query to a DNS server for www.google.com. Since this is a fresh VM it had to search outside its DNS Cache to find the site.</h4>
+<img src="https://github.com/user-attachments/assets/d9b9ba20-aa6d-443f-b3d7-1d698e7c3efc"/><br></br>
+
+<h4>DNS servers use UDP port 53</h4>
+<img src="https://github.com/user-attachments/assets/1e5810c5-7e6e-4f41-b44b-240167bec650"/><br></br>
 </p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
 
 
 
